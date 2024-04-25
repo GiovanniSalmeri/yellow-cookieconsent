@@ -1,5 +1,5 @@
-Analytics 0.8.17
-=================
+# Analytics 0.9.1
+
 Web analytics and cookie consent banner.
 
 <p align="center"><img src="SCREENSHOT.png" alt="Screenshot"></p>

@@ -2,7 +2,7 @@
 // Analytics extension, https://github.com/GiovanniSalmeri/yellow-analytics
 
 class YellowAnalytics {
-    const VERSION = "0.8.17";
+    const VERSION = "0.9.1";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -144,9 +144,9 @@ class YellowAnalytics {
         $output = null;
         if ($name=="header") {
             if ($this->yellow->system->isExisting("analyticsMatomo") || $this->yellow->system->isExisting("analyticsOpenWebAnalytics") || $this->yellow->system->isExisting("analyticsGoogleAnalytics") || $this->yellow->system->isExisting("analyticsFacebookPixel") || $this->yellow->system->isExisting("analyticsHotjar")) {
-                $extensionLocation = $this->yellow->system->get("coreServerBase").$this->yellow->system->get("coreExtensionLocation");
-                $output = "<link rel=\"stylesheet\" type=\"text/css\" media=\"all\" href=\"{$extensionLocation}analytics.css\" />\n";
-                $output .= "<script type=\"text/javascript\"  src=\"{$extensionLocation}analytics.js\"></script>\n";
+                $assetLocation = $this->yellow->system->get("coreServerBase").$this->yellow->system->get("coreAssetLocation");
+                $output = "<link rel=\"stylesheet\" type=\"text/css\" media=\"all\" href=\"{$assetLocation}analytics.css\" />\n";
+                $output .= "<script type=\"text/javascript\"  src=\"{$assetLocation}analytics.js\"></script>\n";
                 $output .= "<script type=\"text/javascript\">\n";
                 $output .= "    glowCookies.start(";
                 $output .= json_encode([
